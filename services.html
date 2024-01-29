@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ua">
+<html lang="uk">
 
 <head>
 	<title>Послуги</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240127223332">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240129012521">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,7 @@
 					<a href="/" class="header__logo logo">Romanova</a>
 					<nav data-da=".header__bottom, 991.98, first" class="header__menu menu">
 						<ul class="menu__list">
-							<li><a href="#" class="_active">Головна</a></li>
+							<li><a href="#" class="active">Головна</a></li>
 							<li><a href="#">Послуги</a></li>
 							<li><a href="#">Про мене</a></li>
 							<li><a href="#">Блог</a></li>
@@ -29,17 +29,17 @@
 					</nav>
 					<div class="header__actions">
 						<div class="header__socials socials">
-							<a href="#" class="socials__icon socials__icon-viber">
+							<a href="#" class="socials__icon socials__icon-viber" aria-label="Viber">
 								<svg>
 									<use xlink:href="img/icons/icons.svg#viber"></use>
 								</svg>
 							</a>
-							<a href="#" class="socials__icon socials__icon-telegram">
+							<a href="#" class="socials__icon socials__icon-telegram" aria-label="Telegram">
 								<svg>
 									<use xlink:href="img/icons/icons.svg#mail-filled"></use>
 								</svg>
 							</a>
-							<a href="#" class="socials__icon socials__icon-call">
+							<a href="#" class="socials__icon socials__icon-call" aria-label="Phone">
 								<svg>
 									<use xlink:href="img/icons/icons.svg#phone"></use>
 								</svg>
@@ -47,7 +47,7 @@
 						</div>
 						<a href="tel:380964697398" class="header__phone">+ 38(096)469-73-98</a>
 						<div class="header__burger">
-							<button type="button" class="header__burger-icon"><span></span></button>
+							<button type="button" class="header__burger-icon" aria-label="Открыть меню"><span></span></button>
 						</div>
 					</div>
 				</div>
@@ -106,18 +106,18 @@
 				<div class="breadcrumbs__container">
 					<ul>
 						<li><a href="#">Головна</a></li>
-						<li><a href="#" class="_active">Про мене</a></li>
+						<li><a href="#" class="_active">Послуги</a></li>
 					</ul>
 				</div>
 			</nav>
-			<div class="services-page__main services">
+			<section class="services-page__main services">
 				<div class="services__container">
 					<h1 class="services__title title-section">Послуги</h1>
 					<div class="services__list">
 						<div class="services__row">
 							<div class="item-service">
 								<div class="item-service__icon icon-service">
-									<img src="img/icons/solar.svg" alt="icon">
+									<img src="img/icons/solar.svg" alt="icon" width="44" height="44">
 								</div>
 								<h2 class="item-service__title">Індивідуальна консультація</h2>
 								<div class="item-service__row">
@@ -129,7 +129,7 @@
 							</div>
 							<div class="item-service">
 								<div class="item-service__icon icon-service">
-									<img src="img/icons/alarm.svg" alt="icon">
+									<img src="img/icons/alarm.svg" alt="icon" width="44" height="44">
 								</div>
 								<h2 class="item-service__title">Експрес консультація</h2>
 								<div class="item-service__row">
@@ -141,7 +141,7 @@
 							</div>
 							<div class="item-service">
 								<div class="item-service__icon icon-service">
-									<img src="img/icons/document.svg" alt="icon">
+									<img src="img/icons/document.svg" alt="icon" width="44" height="44">
 								</div>
 								<h2 class="item-service__title">Тренінг (психологічний практикум)</h2>
 								<div class="item-service__row">
@@ -153,7 +153,7 @@
 							</div>
 							<div class="item-service">
 								<div class="item-service__icon icon-service">
-									<img src="img/icons/oval-love.svg" alt="icon">
+									<img src="img/icons/oval-love.svg" alt="icon" width="44" height="44">
 								</div>
 								<h2 class="item-service__title">Парне консультування</h2>
 								<div class="item-service__row">
@@ -167,17 +167,195 @@
 						<p class="services__lead">*оплата здійснюється <strong>після консультації</strong> переводом на картку.</p>
 					</div>
 				</div>
-			</div>
+			</section>
+			<section class="services-page__work-with work-with">
+				<div class="work-with__container">
+					<div class="work-with__body">
+						<div class="work-with__title">
+							<h2 class="title-section">З чим я працюю</h2>
+							<p>*На період війни консультую постраждалих українців за будь-який донат.</p>
+						</div>
+						<div class="work-with__content">
+							<div class="work-with__content-desktop">
+								<div class="work-with__slider swiper">
+									<div class="work-with__slider-wrapper swiper-wrapper">
+										<div class="slide-work-with swiper-slide">
+											<div class="slide-work-with__icon">
+												<img src="img/icons/scale.svg" alt="icon">
+											</div>
+											<div class="slide-work-with__column">
+												<div class="slide-work-with__number"></div>
+												<h3 class="slide-work-with__title">Work-life balance</h3>
+											</div>
+										</div>
+										<div class="slide-work-with swiper-slide">
+											<div class="slide-work-with__icon">
+												<img src="img/icons/user-love.svg" alt="icon">
+											</div>
+											<div class="slide-work-with__column">
+												<div class="slide-work-with__number"></div>
+												<h3 class="slide-work-with__title">Особистісні питання</h3>
+											</div>
+										</div>
+										<div class="slide-work-with swiper-slide">
+											<div class="slide-work-with__icon">
+												<img src="img/icons/scale.svg" alt="icon">
+											</div>
+											<div class="slide-work-with__column">
+												<div class="slide-work-with__number"></div>
+												<h3 class="slide-work-with__title">Work-life balance</h3>
+											</div>
+										</div>
+										<div class="slide-work-with swiper-slide">
+											<div class="slide-work-with__icon">
+												<img src="img/icons/user-love.svg" alt="icon">
+											</div>
+											<div class="slide-work-with__column">
+												<div class="slide-work-with__number"></div>
+												<h3 class="slide-work-with__title">Особистісні питання</h3>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="work-with__description">
+									<div class="work-with__description-block">
+										<div class="work-with__description-title"><span>01/</span>Особистісні питання:</div>
+										<ul class="work-with__description-list">
+											<li>Стабілізація емоційної сфери, прокрастинація, профорієнтація, як впоратися з тривогою та тривожними станами</li>
+											<li>Робота з минулими образами, побудова особистісних кордонів, розвинути свідомість усвідомленість.</li>
+										</ul>
+									</div>
+									<div class="work-with__description-block">
+										<div class="work-with__description-title"><span>02/</span>Особистісні питання:</div>
+										<ul class="work-with__description-list">
+											<li>Подолання травм та негативних досвідів</li>
+											<li>Робота з самооцінкою та сприйняття себе</li>
+											<li>Стабілізація емоційної сфери, прокрастинація, профорієнтація, як впоратися з тривогою та тривожними станами</li>
+											<li>Робота з минулими образами, побудова особистісних кордонів, розвинути свідомість усвідомленість.</li>
+										</ul>
+									</div>
+									<div class="work-with__description-block">
+										<div class="work-with__description-title"><span>03/</span>Особистісні питання:</div>
+										<ul class="work-with__description-list">
+											<li>Подолання травм та негативних досвідів</li>
+											<li>Робота з самооцінкою та сприйняття себе</li>
+										</ul>
+									</div>
+									<div class="work-with__description-block">
+										<div class="work-with__description-title"><span>04/</span>Особистісні питання:</div>
+										<ul class="work-with__description-list">
+											<li>Робота з самооцінкою та сприйняття себе</li>
+											<li>Стабілізація емоційної сфери, прокрастинація, профорієнтація, як впоратися з тривогою та тривожними станами</li>
+											<li>Робота з минулими образами, побудова особистісних кордонів, розвинути свідомість усвідомленість.</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="work-with__content-mobile">
+								<div class="work-with__carousel">
+									<div class="work-with__slider-nav">
+										<button type="button" class="work-with__slider-nav--prev btn" aria-label="Попередній слайд">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#slider-nav"></use>
+											</svg>
+										</button>
+										<button type="button" class="work-with__slider-nav--next btn" aria-label="Наступний слайд">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#slider-nav"></use>
+											</svg>
+										</button>
+									</div>
+									<div class="work-with__slider-body swiper">
+										<div class="work-with__slider-wrapper swiper-wrapper">
+											<div class="slide-work-with swiper-slide">
+												<div class="slide-work-with__head">
+													<div class="slide-work-with__icon">
+														<img src="img/icons/user-love.svg" alt="icon">
+													</div>
+													<div class="slide-work-with__column">
+														<div class="slide-work-with__number slide-work-with__number-mob"></div>
+														<h3 class="slide-work-with__title">Особистісні питання</h3>
+													</div>
+												</div>
+												<ul class="work-with__description-list">
+													<li>Подолання травм та негативних досвідів</li>
+													<li>Робота з самооцінкою та сприйняття себе</li>
+													<li>Стабілізація емоційної сфери, прокрастинація, профорієнтація, як впоратися з тривогою та тривожними станами</li>
+													<li>Робота з минулими образами, побудова особистісних кордонів, розвинути свідомість усвідомленість.</li>
+												</ul>
+											</div>
+											<div class="slide-work-with swiper-slide">
+												<div class="slide-work-with__head">
+													<div class="slide-work-with__icon">
+														<img src="img/icons/scale.svg" alt="icon">
+													</div>
+													<div class="slide-work-with__column">
+														<div class="slide-work-with__number slide-work-with__number-mob"></div>
+														<h3 class="slide-work-with__title">Особистісні питання</h3>
+													</div>
+												</div>
+												<ul class="work-with__description-list">
+													<li>Стабілізація емоційної сфери, прокрастинація, профорієнтація, як впоратися з тривогою та тривожними станами</li>
+													<li>Робота з минулими образами, побудова особистісних кордонів, розвинути свідомість усвідомленість.</li>
+												</ul>
+											</div>
+											<div class="slide-work-with swiper-slide">
+												<div class="slide-work-with__head">
+													<div class="slide-work-with__icon">
+														<img src="img/icons/user-love.svg" alt="icon">
+													</div>
+													<div class="slide-work-with__column">
+														<div class="slide-work-with__number slide-work-with__number-mob"></div>
+														<h3 class="slide-work-with__title">Особистісні питання</h3>
+													</div>
+												</div>
+												<ul class="work-with__description-list">
+													<li>Подолання травм та негативних досвідів</li>
+													<li>Робота з самооцінкою та сприйняття себе</li>
+													<li>Стабілізація емоційної сфери, прокрастинація, профорієнтація, як впоратися з тривогою та тривожними станами</li>
+													<li>Робота з минулими образами, побудова особистісних кордонів, розвинути свідомість усвідомленість.</li>
+												</ul>
+											</div>
+											<div class="slide-work-with swiper-slide">
+												<div class="slide-work-with__head">
+													<div class="slide-work-with__icon">
+														<img src="img/icons/scale.svg" alt="icon">
+													</div>
+													<div class="slide-work-with__column">
+														<div class="slide-work-with__number slide-work-with__number-mob"></div>
+														<h3 class="slide-work-with__title">Особистісні питання</h3>
+													</div>
+												</div>
+												<ul class="work-with__description-list">
+													<li>Подолання травм та негативних досвідів</li>
+													<li>Стабілізація емоційної сфери, прокрастинація, профорієнтація, як впоратися з тривогою та тривожними станами</li>
+													<li>Робота з минулими образами, побудова особистісних кордонів, розвинути свідомість усвідомленість.</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-pagination"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<svg class="work-with__line-svg">
+						<use xlink:href="img/icons/icons.svg#work-with-line"></use>
+					</svg>
+				</div>
+			</section>
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
 				<div class="footer__body">
 					<div class="footer__column">
-						<a href="#" class="footer__logo logo">Romanova</a>
+						<a href="#" class="footer__logo logo" aria-label="Перейти на головну сторінку">Romanova</a>
 						<p class="footer__text">Ваш надійний психолог, мені важливо донести, що моя ціль, як психолога, допомогти вам побачити в собі все краще, що ви маєте, допомогти вам розкритись</p>
 						<div class="footer__schedule">
 							<div class="footer__schedule-label">Я на звязку:</div>
-							<p class="footer__schedule-value">ПН - ПТ: з 10:00 до 20:00</p>
+							<p class="footer__schedule-value">
+								<time datetime="T10:00">ПН - ПТ: з 10:00 до 20:00</time>
+							</p>
 							<p class="footer__schedule-value">СБ - НД: вихідний</p>
 						</div>
 						<div data-da=".footer__body, 767.98" class="footer__copyright">
@@ -188,7 +366,7 @@
 					<div class="footer__column contacts-footer">
 						<div class="footer__column-caption contacts-footer__caption">Контакти</div>
 						<div class="contacts-footer__items">
-							<a href="tel:380964697398" class="contacts-footer__link">
+							<a href="tel:380964697398" class="contacts-footer__link" aria-label="Телефон: +38(096)469-73-98">
 								<svg>
 									<use xlink:href="img/icons/icons.svg#phone"></use>
 								</svg>
@@ -210,22 +388,22 @@
 						<div class="contacts-footer__socials">
 							<div class="contacts-footer__socials-label">Шукайте у соц. мережах:</div>
 							<div class="contacts-footer__socials-icons socials">
-								<a href="#" class="socials__icon socials__icon-viber">
+								<a href="#" class="socials__icon socials__icon-viber" aria-label="Viber">
 									<svg>
 										<use xlink:href="img/icons/icons.svg#viber"></use>
 									</svg>
 								</a>
-								<a href="#" class="socials__icon socials__icon-telegram">
+								<a href="#" class="socials__icon socials__icon-telegram" aria-label="telegram">
 									<svg>
 										<use xlink:href="img/icons/icons.svg#mail-filled"></use>
 									</svg>
 								</a>
-								<a href="#" class="socials__icon socials__icon-instagram">
+								<a href="#" class="socials__icon socials__icon-instagram" aria-label="instagram">
 									<svg>
 										<use xlink:href="img/icons/icons.svg#instagram"></use>
 									</svg>
 								</a>
-								<a href="#" class="socials__icon socials__icon-youtube">
+								<a href="#" class="socials__icon socials__icon-youtube" aria-label="youtube">
 									<svg>
 										<use xlink:href="img/icons/icons.svg#youtube"></use>
 									</svg>
@@ -237,22 +415,22 @@
 						<div class="footer__column-caption form-footer__caption">Залишились питання?</div>
 						<div class="form-footer__inputs">
 							<div class="form-footer__input">
-								<input data-required autocomplete="off" type="text" name="username" placeholder="Ваше імя*" class="input">
+								<input data-required autocomplete="off" type="text" name="username" placeholder="Ваше імя*" class="input" aria-label="Ваше ім'я">
 							</div>
 							<div class="form-footer__input">
-								<input data-required autocomplete="off" type="tel" name="userphone" placeholder="Ваш номер телефону*" class="input">
+								<input data-required autocomplete="off" type="tel" name="userphone" placeholder="Ваш номер телефону*" class="input" aria-label="Ваш номер телефону">
 							</div>
 							<div class="form-footer__input">
-								<input data-required autocomplete="off" type="email" name="usermail" placeholder="Ваша пошта*" class="input">
+								<input data-required autocomplete="off" type="email" name="usermail" placeholder="Ваша пошта*" class="input" aria-label="Ваша пошта">
 							</div>
 						</div>
-						<button type="submit" class="form-footer__submit btn btn-blue">Надіслати</button>
+						<button type="submit" class="form-footer__submit btn btn-blue" aria-label="Надіслати форму">Надіслати</button>
 					</form>
 				</div>
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240127223332"></script>
+	<script src="js/app.min.js?_v=20240129012521"></script>
 </body>
 
 </html>

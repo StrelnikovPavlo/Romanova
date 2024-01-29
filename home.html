@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ua">
+<html lang="uk">
 
 <head>
 	<title>Головна</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240127223332">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240129012521">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,7 @@
 					<a href="/" class="header__logo logo">Romanova</a>
 					<nav data-da=".header__bottom, 991.98, first" class="header__menu menu">
 						<ul class="menu__list">
-							<li><a href="#" class="_active">Головна</a></li>
+							<li><a href="#" class="active">Головна</a></li>
 							<li><a href="#">Послуги</a></li>
 							<li><a href="#">Про мене</a></li>
 							<li><a href="#">Блог</a></li>
@@ -29,17 +29,17 @@
 					</nav>
 					<div class="header__actions">
 						<div class="header__socials socials">
-							<a href="#" class="socials__icon socials__icon-viber">
+							<a href="#" class="socials__icon socials__icon-viber" aria-label="Viber">
 								<svg>
 									<use xlink:href="img/icons/icons.svg#viber"></use>
 								</svg>
 							</a>
-							<a href="#" class="socials__icon socials__icon-telegram">
+							<a href="#" class="socials__icon socials__icon-telegram" aria-label="Telegram">
 								<svg>
 									<use xlink:href="img/icons/icons.svg#mail-filled"></use>
 								</svg>
 							</a>
-							<a href="#" class="socials__icon socials__icon-call">
+							<a href="#" class="socials__icon socials__icon-call" aria-label="Phone">
 								<svg>
 									<use xlink:href="img/icons/icons.svg#phone"></use>
 								</svg>
@@ -47,7 +47,7 @@
 						</div>
 						<a href="tel:380964697398" class="header__phone">+ 38(096)469-73-98</a>
 						<div class="header__burger">
-							<button type="button" class="header__burger-icon"><span></span></button>
+							<button type="button" class="header__burger-icon" aria-label="Открыть меню"><span></span></button>
 						</div>
 					</div>
 				</div>
@@ -115,25 +115,26 @@
 									<p>Я чудово розумію, що поділитись особистим з незнайомою людиною — це зовсім непросто.</p>
 									<p><strong>Тому мені важливо донести, що моя ціль, як психолога, допомогти вам побачити в собі все краще, що ви маєте, допомогти вам розкритись.</strong></p>
 								</div>
-								<button type="button" class="who__button btn btn-blue">Отримати консультацію</button>
+								<button type="button" class="who__button btn btn-blue" aria-label="Отримати консультацію">Отримати консультацію</button>
 							</div>
 						</div>
 						<div class="who__img">
 							<div class="who__socials">
+								<span></span>
 								<div class="who__socials-label">Шукайте у <br> соц. мережах:</div>
 								<div class="who__socials-icons">
 									<div class="who__socials-icon who__socials-icon--instagram"></div>
 									<div class="who__socials-icon who__socials-icon--facebook"></div>
 									<div class="who__socials-icon who__socials-icon--twitter"></div>
 									<div class="who__socials-icon who__socials-icon-youtube"></div>
-									<button type="button" class="who__socials-more">
+									<button type="button" class="who__socials-more" aria-label="Показзати більше соц.мереж">
 										<svg width="12" height="12" fill="#fff">
 											<use xlink:href="img/icons/icons.svg#plus"></use>
 										</svg>
 									</button>
 								</div>
 							</div>
-							<picture><source srcset="img/homePage/romanova.webp" type="image/webp"><img src="img/homePage/romanova.png" alt="Романова Наталія"></picture>
+							<picture><source srcset="img/homePage/romanova.webp" type="image/webp"><img src="img/homePage/romanova.png" alt="Романова Наталія" width="719" height="684"></picture>
 						</div>
 					</div>
 				</div>
@@ -224,12 +225,12 @@
 							<div class="work-with__content-mobile">
 								<div class="work-with__carousel">
 									<div class="work-with__slider-nav">
-										<button type="button" class="work-with__slider-nav--prev btn">
+										<button type="button" class="work-with__slider-nav--prev btn" aria-label="Попередній слайд">
 											<svg>
 												<use xlink:href="img/icons/icons.svg#slider-nav"></use>
 											</svg>
 										</button>
-										<button type="button" class="work-with__slider-nav--next btn">
+										<button type="button" class="work-with__slider-nav--next btn" aria-label="Наступний слайд">
 											<svg>
 												<use xlink:href="img/icons/icons.svg#slider-nav"></use>
 											</svg>
@@ -243,7 +244,7 @@
 														<img src="img/icons/user-love.svg" alt="icon">
 													</div>
 													<div class="slide-work-with__column">
-														<div class="slide-work-with__number"></div>
+														<div class="slide-work-with__number slide-work-with__number-mob"></div>
 														<h3 class="slide-work-with__title">Особистісні питання</h3>
 													</div>
 												</div>
@@ -260,7 +261,7 @@
 														<img src="img/icons/scale.svg" alt="icon">
 													</div>
 													<div class="slide-work-with__column">
-														<div class="slide-work-with__number"></div>
+														<div class="slide-work-with__number slide-work-with__number-mob"></div>
 														<h3 class="slide-work-with__title">Особистісні питання</h3>
 													</div>
 												</div>
@@ -275,7 +276,7 @@
 														<img src="img/icons/user-love.svg" alt="icon">
 													</div>
 													<div class="slide-work-with__column">
-														<div class="slide-work-with__number"></div>
+														<div class="slide-work-with__number slide-work-with__number-mob"></div>
 														<h3 class="slide-work-with__title">Особистісні питання</h3>
 													</div>
 												</div>
@@ -292,7 +293,7 @@
 														<img src="img/icons/scale.svg" alt="icon">
 													</div>
 													<div class="slide-work-with__column">
-														<div class="slide-work-with__number"></div>
+														<div class="slide-work-with__number slide-work-with__number-mob"></div>
 														<h3 class="slide-work-with__title">Особистісні питання</h3>
 													</div>
 												</div>
@@ -320,7 +321,7 @@
 					<div class="home-services__body">
 						<div class="home-services__service home-service-item">
 							<div class="home-service-item__icon icon-service">
-								<img src="img/icons/solar.svg" alt="icon">
+								<img src="img/icons/solar.svg" alt="icon" width="44" height="44">
 							</div>
 							<div class="home-service-item__content">
 								<h3 class="home-service-item__title">Індивідуальна консультація</h3>
@@ -329,46 +330,46 @@
 									<div class="home-service-item__price">600 грн</div>
 								</div>
 							</div>
-							<button type="button" class="home-service-item__order btn btn-blue">Замовити</button>
+							<button type="button" class="home-service-item__order btn btn-blue" aria-label="Замовити індивідуальну консультацію">Замовити</button>
 						</div>
 						<div class="home-services__service home-service-item">
 							<div class="home-service-item__icon icon-service">
-								<img src="img/icons/alarm.svg" alt="icon">
+								<img src="img/icons/alarm.svg" alt="icon" width="44" height="44">
 							</div>
 							<div class="home-service-item__content">
 								<h3 class="home-service-item__title">Експрес консультація</h3>
 								<div class="home-service-item__row">
-									<div class="home-service-item__time">~ 50 - 120 хв.</div>
-									<div class="home-service-item__price">600 грн</div>
+									<div class="home-service-item__time">~ 30 - 60 хв.</div>
+									<div class="home-service-item__price">300 грн</div>
 								</div>
 							</div>
-							<button type="button" class="home-service-item__order btn btn-blue">Замовити</button>
+							<button type="button" class="home-service-item__order btn btn-blue" aria-label="Замовити експрес консультацію">Замовити</button>
 						</div>
 						<div class="home-services__service home-service-item">
 							<div class="home-service-item__icon icon-service">
-								<img src="img/icons/document.svg" alt="icon">
+								<img src="img/icons/document.svg" alt="icon" width="44" height="44">
 							</div>
 							<div class="home-service-item__content">
 								<h3 class="home-service-item__title">Тренінг (психологічний практикум)</h3>
 								<div class="home-service-item__row">
-									<div class="home-service-item__time">~ 50 - 120 хв.</div>
-									<div class="home-service-item__price">600 грн</div>
+									<div class="home-service-item__time">~ 120 -160 хв.</div>
+									<div class="home-service-item__price">900 грн</div>
 								</div>
 							</div>
-							<button type="button" class="home-service-item__order btn btn-blue">Замовити</button>
+							<button type="button" class="home-service-item__order btn btn-blue" aria-label="Замовити тренінг (психологічний практикум)">Замовити</button>
 						</div>
 						<div class="home-services__service home-service-item">
 							<div class="home-service-item__icon icon-service">
-								<img src="img/icons/oval-love.svg" alt="icon">
+								<img src="img/icons/oval-love.svg" alt="icon" width="44" height="44">
 							</div>
 							<div class="home-service-item__content">
 								<h3 class="home-service-item__title">Парне консультування</h3>
 								<div class="home-service-item__row">
-									<div class="home-service-item__time">~ 50 - 120 хв.</div>
-									<div class="home-service-item__price">600 грн</div>
+									<div class="home-service-item__time">~ 120 - 160 хв.</div>
+									<div class="home-service-item__price">900 грн</div>
 								</div>
 							</div>
-							<button type="button" class="home-service-item__order btn btn-blue">Замовити</button>
+							<button type="button" class="home-service-item__order btn btn-blue" aria-label="Замовити парне консультування">Замовити</button>
 						</div>
 					</div>
 				</div>
@@ -377,13 +378,20 @@
 				<div class="bg-gradient__inner">
 					<div class="bg-gradient__body">
 						<div class="bg-gradient__content">
+							<svg class="consultation-process__line" xmlns="http://www.w3.org/2000/svg" width="792" height="399" viewBox="0 0 792 399" fill="none">
+								<path d="M1.99993 194.174C155 46.6743 403.384 85.2366 539.245 144.784C709.071 219.218 764.796 104.301 738.02 79.7802C716.599 60.1633 665.176 94.6481 642.142 114.343C667.405 60.9079 661.327 -10.5672 622.013 3.46715C573.839 20.6649 553.344 96.1743 625.783 209.955C681.453 297.394 750 377.674 790.5 397.174" stroke="url(#paint0_linear_75_267)" stroke-width="3" />
+								<linearGradient id="paint0_linear_75_267" x1="570.481" y1="43.2731" x2="757.117" y2="327.827" gradientUnits="userSpaceOnUse">
+									<stop stop-color="white" />
+									<stop offset="1" stop-color="white" />
+								</linearGradient>
+							</svg>
 							<h2 class="consultation-process__title title-section">Як відбувається <span>консультація</span></h2>
 							<div class="consultation-process__steps">
 								<div class="consultation-step">
 									<div class="consultation-step__number">01</div>
 									<div class="consultation-step__block">
 										<div class="consultation-step__icon icon-service">
-											<img src="img/icons/chat-line.svg" alt="">
+											<img src="img/icons/chat-line.svg" alt="icon" width="44" height="44">
 										</div>
 										<p class="consultation-step__text">Ви надсилаєте запит на онлайн консультацію з бажаним датою та часом</p>
 									</div>
@@ -392,27 +400,27 @@
 									<div class="consultation-step__number">02</div>
 									<div class="consultation-step__block">
 										<div class="consultation-step__icon icon-service">
-											<img src="img/icons/chat-line.svg" alt="">
+											<img src="img/icons/add-folder.svg" alt="icon" width="44" height="44">
 										</div>
-										<p class="consultation-step__text">Ви надсилаєте запит на онлайн консультацію з бажаним датою та часом</p>
+										<p class="consultation-step__text">Я опрацьовую Ваш запит та надсилаю всю необхідну інформацію для зв`язку</p>
 									</div>
 								</div>
 								<div class="consultation-step">
 									<div class="consultation-step__number">03</div>
 									<div class="consultation-step__block">
 										<div class="consultation-step__icon icon-service">
-											<img src="img/icons/chat-line.svg" alt="">
+											<img src="img/icons/chat-round-like.svg" alt="icon" width="44" height="44">
 										</div>
-										<p class="consultation-step__text">Ви надсилаєте запит на онлайн консультацію з бажаним датою та часом</p>
+										<p class="consultation-step__text">На консультації з моєю професійною підтримкою, Ви продуктивно пропрацьовуєте своє питання</p>
 									</div>
 								</div>
 								<div class="consultation-step">
 									<div class="consultation-step__number">04</div>
 									<div class="consultation-step__block">
 										<div class="consultation-step__icon icon-service">
-											<img src="img/icons/chat-line.svg" alt="">
+											<img src="img/icons/checklist-minimalistic.svg" alt="icon" width="44" height="44">
 										</div>
-										<p class="consultation-step__text">Ви надсилаєте запит на онлайн консультацію з бажаним датою та часом</p>
+										<p class="consultation-step__text">Після кожної зустрічі, Ви отримуєте домашнє завдання (за потреби) для закріплення резкльтату після консультації</p>
 									</div>
 								</div>
 							</div>
@@ -422,11 +430,18 @@
 			</section>
 			<section class="home-page__about home-about">
 				<div class="home-about__container">
+					<svg class="home-about__line" xmlns="http://www.w3.org/2000/svg" width="1891" height="674" viewBox="0 0 1891 674" fill="none">
+						<path d="M1890 220.5C1667 399.499 1228.56 330.5 1193.5 203C1177 143 1245.5 87.4995 1381 193.142C1512 -289.001 1704.75 254.766 1302.5 573C953 849.5 235 500.5 -39 106" stroke="url(#paint0_linear_75_233)" stroke-width="3" />
+						<linearGradient id="paint0_linear_75_233" x1="1137" y1="616.002" x2="1427" y2="224.502" gradientUnits="userSpaceOnUse">
+							<stop stop-color="#E4F0FE" />
+							<stop offset="1" stop-color="#CCDCFB" />
+						</linearGradient>
+					</svg>
 					<div class="home-about__body">
 						<div class="about__img">
 							<span class="about__img-icon about__img-icon-1"></span>
 							<span class="about__img-icon about__img-icon-2"></span>
-							<picture><source srcset="img/homePage/about-img.webp" type="image/webp"><img src="img/homePage/about-img.png" alt="img"></picture>
+							<picture><source srcset="img/homePage/about-img.webp" type="image/webp"><img src="img/homePage/about-img.png" alt="img" width="417" height="546"></picture>
 							<div class="about__experience">
 								<div class="about__experience-icon"></div>
 								<span>Досвід роботи <strong>- 5 років</strong></span>
@@ -449,24 +464,24 @@
 					</div>
 				</div>
 			</section>
-			<section class="home-page__useful-materials home-useful-material">
-				<div class="home-useful-material__container">
-					<h2 class="home-useful-material__title title-section">Корисні матеріали</h2>
-					<div class="home-useful-material__items">
-						<article class="home-useful-material__item item-useful-material">
-							<a href="#" class="item-useful-material__img">
+			<section class="home-page__useful-materials home-material">
+				<div class="home-material__container">
+					<h2 class="home-material__title title-section">Корисні матеріали</h2>
+					<div class="home-material__items">
+						<article class="home-material__item item-material">
+							<a href="#" class="item-material__img">
 								<picture><source srcset="img/useful-material/1.webp" type="image/webp"><img src="img/useful-material/1.jpg" alt="img"></picture>
-								<div class="item-useful-material__info">
-									<div class="item-useful-material__info-item item-useful-material__date">12.09.23</div>
-									<div class="item-useful-material__info-item item-useful-material__time">|<span>~ 20 хв.</span></div>
+								<div class="item-material__info">
+									<div class="item-material__info-item item-material__date">12.09.23</div>
+									<div class="item-material__info-item item-material__time">|<span>~ 20 хв.</span></div>
 								</div>
 							</a>
-							<div class="item-useful-material__content">
+							<div class="item-material__content">
 								<a href="#">
-									<h3 class="item-useful-material__title">Про внутрішню дисципліну</h3>
+									<h3 class="item-material__title">Про внутрішню дисципліну</h3>
 								</a>
-								<p class="item-useful-material__text">Як бісить, коли єдиний спосіб щось зробити – це взяти і зробити це)) Переслуховуючи один із навчальних семінарів, звернула увагу на класну</p>
-								<a href="#" class="item-useful-material__more">
+								<p class="item-material__text">Як бісить, коли єдиний спосіб щось зробити – це взяти і зробити це)) Переслуховуючи один із навчальних семінарів, звернула увагу на класну</p>
+								<a href="#" class="item-material__more">
 									<span>Читати далі</span>
 									<svg>
 										<use xlink:href="img/icons/icons.svg#arrow"></use>
@@ -474,20 +489,20 @@
 								</a>
 							</div>
 						</article>
-						<article class="home-useful-material__item item-useful-material">
-							<a href="#" class="item-useful-material__img">
+						<article class="home-material__item item-material">
+							<a href="#" class="item-material__img">
 								<picture><source srcset="img/useful-material/2.webp" type="image/webp"><img src="img/useful-material/2.jpg" alt="img"></picture>
-								<div class="item-useful-material__info">
-									<div class="item-useful-material__info-item item-useful-material__date">12.09.23</div>
-									<div class="item-useful-material__info-item item-useful-material__time">|<span>~ 15 хв.</span></div>
+								<div class="item-material__info">
+									<div class="item-material__info-item item-material__date">12.09.23</div>
+									<div class="item-material__info-item item-material__time">|<span>~ 15 хв.</span></div>
 								</div>
 							</a>
-							<div class="item-useful-material__content">
+							<div class="item-material__content">
 								<a href="#">
-									<h3 class="item-useful-material__title">Звільнення від харчової залежності</h3>
+									<h3 class="item-material__title">Звільнення від харчової залежності</h3>
 								</a>
-								<p class="item-useful-material__text">Ця замітка для тих, хто не може жити без солодкого, борошняного чи фастфуду, кого холодильник манить вдень та вночі. Ви заїдаєте Останнім часом набирає популярності такий напрямок як психосоматика. А також все частіше з’являється запит на психотерапію, спрямовану...</p>
-								<a href="#" class="item-useful-material__more">
+								<p class="item-material__text">Ця замітка для тих, хто не може жити без солодкого, борошняного чи фастфуду, кого холодильник манить вдень та вночі. Ви заїдаєте Останнім часом набирає популярності такий напрямок як психосоматика. А також все частіше з’являється запит на психотерапію, спрямовану...</p>
+								<a href="#" class="item-material__more">
 									<span>Читати далі</span>
 									<svg>
 										<use xlink:href="img/icons/icons.svg#arrow"></use>
@@ -495,20 +510,20 @@
 								</a>
 							</div>
 						</article>
-						<article class="home-useful-material__item item-useful-material">
-							<a href="#" class="item-useful-material__img">
+						<article class="home-material__item item-material">
+							<a href="#" class="item-material__img">
 								<picture><source srcset="img/useful-material/3.webp" type="image/webp"><img src="img/useful-material/3.png" alt="img"></picture>
-								<div class="item-useful-material__info">
-									<div class="item-useful-material__info-item item-useful-material__date">18.09.23</div>
-									<div class="item-useful-material__info-item item-useful-material__time">|<span>~30 хв.</span></div>
+								<div class="item-material__info">
+									<div class="item-material__info-item item-material__date">18.09.23</div>
+									<div class="item-material__info-item item-material__time">|<span>~30 хв.</span></div>
 								</div>
 							</a>
-							<div class="item-useful-material__content">
+							<div class="item-material__content">
 								<a href="#">
-									<h3 class="item-useful-material__title">Психосоматика та здоров’я</h3>
+									<h3 class="item-material__title">Психосоматика та здоров’я</h3>
 								</a>
-								<p class="item-useful-material__text">Останнім часом набирає популярності такий напрямок як психосоматика. А також все частіше з’являється запит на психотерапію, спрямовану Останнім часом набирає популярності такий напрямок як психосоматика. А також все частіше з’являється запит на психотерапію, спрямовану...</p>
-								<a href="#" class="item-useful-material__more">
+								<p class="item-material__text">Останнім часом набирає популярності такий напрямок як психосоматика. А також все частіше з’являється запит на психотерапію, спрямовану Останнім часом набирає популярності такий напрямок як психосоматика. А також все частіше з’являється запит на психотерапію, спрямовану...</p>
+								<a href="#" class="item-material__more">
 									<span>Читати далі</span>
 									<svg>
 										<use xlink:href="img/icons/icons.svg#arrow"></use>
@@ -517,7 +532,7 @@
 							</div>
 						</article>
 					</div>
-					<a href="#" class="home-useful-material__read-more btn btn-blue">Читати більше</a>
+					<a href="#" class="home-material__read-more btn btn-blue">Читати більше</a>
 				</div>
 			</section>
 		</main>
@@ -525,11 +540,13 @@
 			<div class="footer__container">
 				<div class="footer__body">
 					<div class="footer__column">
-						<a href="#" class="footer__logo logo">Romanova</a>
+						<a href="#" class="footer__logo logo" aria-label="Перейти на головну сторінку">Romanova</a>
 						<p class="footer__text">Ваш надійний психолог, мені важливо донести, що моя ціль, як психолога, допомогти вам побачити в собі все краще, що ви маєте, допомогти вам розкритись</p>
 						<div class="footer__schedule">
 							<div class="footer__schedule-label">Я на звязку:</div>
-							<p class="footer__schedule-value">ПН - ПТ: з 10:00 до 20:00</p>
+							<p class="footer__schedule-value">
+								<time datetime="T10:00">ПН - ПТ: з 10:00 до 20:00</time>
+							</p>
 							<p class="footer__schedule-value">СБ - НД: вихідний</p>
 						</div>
 						<div data-da=".footer__body, 767.98" class="footer__copyright">
@@ -540,7 +557,7 @@
 					<div class="footer__column contacts-footer">
 						<div class="footer__column-caption contacts-footer__caption">Контакти</div>
 						<div class="contacts-footer__items">
-							<a href="tel:380964697398" class="contacts-footer__link">
+							<a href="tel:380964697398" class="contacts-footer__link" aria-label="Телефон: +38(096)469-73-98">
 								<svg>
 									<use xlink:href="img/icons/icons.svg#phone"></use>
 								</svg>
@@ -562,22 +579,22 @@
 						<div class="contacts-footer__socials">
 							<div class="contacts-footer__socials-label">Шукайте у соц. мережах:</div>
 							<div class="contacts-footer__socials-icons socials">
-								<a href="#" class="socials__icon socials__icon-viber">
+								<a href="#" class="socials__icon socials__icon-viber" aria-label="Viber">
 									<svg>
 										<use xlink:href="img/icons/icons.svg#viber"></use>
 									</svg>
 								</a>
-								<a href="#" class="socials__icon socials__icon-telegram">
+								<a href="#" class="socials__icon socials__icon-telegram" aria-label="telegram">
 									<svg>
 										<use xlink:href="img/icons/icons.svg#mail-filled"></use>
 									</svg>
 								</a>
-								<a href="#" class="socials__icon socials__icon-instagram">
+								<a href="#" class="socials__icon socials__icon-instagram" aria-label="instagram">
 									<svg>
 										<use xlink:href="img/icons/icons.svg#instagram"></use>
 									</svg>
 								</a>
-								<a href="#" class="socials__icon socials__icon-youtube">
+								<a href="#" class="socials__icon socials__icon-youtube" aria-label="youtube">
 									<svg>
 										<use xlink:href="img/icons/icons.svg#youtube"></use>
 									</svg>
@@ -589,22 +606,22 @@
 						<div class="footer__column-caption form-footer__caption">Залишились питання?</div>
 						<div class="form-footer__inputs">
 							<div class="form-footer__input">
-								<input data-required autocomplete="off" type="text" name="username" placeholder="Ваше імя*" class="input">
+								<input data-required autocomplete="off" type="text" name="username" placeholder="Ваше імя*" class="input" aria-label="Ваше ім'я">
 							</div>
 							<div class="form-footer__input">
-								<input data-required autocomplete="off" type="tel" name="userphone" placeholder="Ваш номер телефону*" class="input">
+								<input data-required autocomplete="off" type="tel" name="userphone" placeholder="Ваш номер телефону*" class="input" aria-label="Ваш номер телефону">
 							</div>
 							<div class="form-footer__input">
-								<input data-required autocomplete="off" type="email" name="usermail" placeholder="Ваша пошта*" class="input">
+								<input data-required autocomplete="off" type="email" name="usermail" placeholder="Ваша пошта*" class="input" aria-label="Ваша пошта">
 							</div>
 						</div>
-						<button type="submit" class="form-footer__submit btn btn-blue">Надіслати</button>
+						<button type="submit" class="form-footer__submit btn btn-blue" aria-label="Надіслати форму">Надіслати</button>
 					</form>
 				</div>
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240127223332"></script>
+	<script src="js/app.min.js?_v=20240129012521"></script>
 </body>
 
 </html>

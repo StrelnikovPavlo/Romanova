@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ua">
+<html lang="uk">
 
 <head>
 	<title>Дипломований психолог</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240127223332">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240129012521">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,7 @@
 					<a href="/" class="header__logo logo">Romanova</a>
 					<nav data-da=".header__bottom, 991.98, first" class="header__menu menu">
 						<ul class="menu__list">
-							<li><a href="#" class="_active">Головна</a></li>
+							<li><a href="#" class="active">Головна</a></li>
 							<li><a href="#">Послуги</a></li>
 							<li><a href="#">Про мене</a></li>
 							<li><a href="#">Блог</a></li>
@@ -29,17 +29,17 @@
 					</nav>
 					<div class="header__actions">
 						<div class="header__socials socials">
-							<a href="#" class="socials__icon socials__icon-viber">
+							<a href="#" class="socials__icon socials__icon-viber" aria-label="Viber">
 								<svg>
 									<use xlink:href="img/icons/icons.svg#viber"></use>
 								</svg>
 							</a>
-							<a href="#" class="socials__icon socials__icon-telegram">
+							<a href="#" class="socials__icon socials__icon-telegram" aria-label="Telegram">
 								<svg>
 									<use xlink:href="img/icons/icons.svg#mail-filled"></use>
 								</svg>
 							</a>
-							<a href="#" class="socials__icon socials__icon-call">
+							<a href="#" class="socials__icon socials__icon-call" aria-label="Phone">
 								<svg>
 									<use xlink:href="img/icons/icons.svg#phone"></use>
 								</svg>
@@ -47,7 +47,7 @@
 						</div>
 						<a href="tel:380964697398" class="header__phone">+ 38(096)469-73-98</a>
 						<div class="header__burger">
-							<button type="button" class="header__burger-icon"><span></span></button>
+							<button type="button" class="header__burger-icon" aria-label="Открыть меню"><span></span></button>
 						</div>
 					</div>
 				</div>
@@ -114,6 +114,13 @@
 				<div class="about__container">
 					<div class="about__body">
 						<div class="about__row">
+							<svg class="about__line" xmlns="http://www.w3.org/2000/svg" width="1920" height="674" viewBox="0 0 1920 674" fill="none">
+								<path d="M-39 218.5C184 397.5 667.437 330.572 702.5 203.072C719 143.072 650.5 87.5718 515 193.215C384 -288.928 191.247 254.838 593.5 573.072C943 849.572 1661 500.572 1935 106.072" stroke="url(#paint0_linear_151_926)" stroke-width="3" />
+								<linearGradient id="paint0_linear_151_926" x1="759" y1="616.074" x2="469" y2="224.574" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#E4F0FE" />
+									<stop offset="1" stop-color="#CCDCFB" />
+								</linearGradient>
+							</svg>
 							<div class="about__img">
 								<span class="about__img-icon about__img-icon-1"></span>
 								<span class="about__img-icon about__img-icon-2"></span>
@@ -147,19 +154,24 @@
 									<div class="education-about__list education-about__list-base">
 										<p>Київський національний лінгвістичний університет, спеціальність: «Практична психологія»</p>
 										<p>Національний університет «Києво-Могилянська академія», спеціальність: «Психологія»</p>
+										<div class="education-about__list-hide"></div>
 									</div>
-									<!-- <button type="button" class="education-about__show-more">
-                              <span>Дивитись усе</span>
-                              <svg>
-                                 <use xlink:href="img/icons/icons.svg#arrow"></use>
-                              </svg>
-                           </button> -->
+									<button type="button" class="education-about__show-more btn-show">
+										<span>Дивитись усе</span>
+										<svg>
+											<use xlink:href="img/icons/icons.svg#arrow"></use>
+										</svg>
+									</button>
 								</div>
 								<div class="education-about__block">
 									<div class="education-about__caption">Додаткова освіта</div>
 									<div class="education-about__list education-about__list-additional">
 										<p>Київський інститут раціонально - інтуїтивної психотерапії «Я» - НЛП-практик</p>
 										<p>Присвоєння кваліфікації «Арт-терапевт»</p>
+										<div class="education-about__list-hide">
+											<p>Київський інститут раціонально - інтуїтивної психотерапії «Я» - НЛП-практик</p>
+											<p>Присвоєння кваліфікації «Арт-терапевт»</p>
+										</div>
 									</div>
 									<button type="button" class="education-about__show-more btn-show">
 										<span>Дивитись усе</span>
@@ -281,11 +293,13 @@
 			<div class="footer__container">
 				<div class="footer__body">
 					<div class="footer__column">
-						<a href="#" class="footer__logo logo">Romanova</a>
+						<a href="#" class="footer__logo logo" aria-label="Перейти на головну сторінку">Romanova</a>
 						<p class="footer__text">Ваш надійний психолог, мені важливо донести, що моя ціль, як психолога, допомогти вам побачити в собі все краще, що ви маєте, допомогти вам розкритись</p>
 						<div class="footer__schedule">
 							<div class="footer__schedule-label">Я на звязку:</div>
-							<p class="footer__schedule-value">ПН - ПТ: з 10:00 до 20:00</p>
+							<p class="footer__schedule-value">
+								<time datetime="T10:00">ПН - ПТ: з 10:00 до 20:00</time>
+							</p>
 							<p class="footer__schedule-value">СБ - НД: вихідний</p>
 						</div>
 						<div data-da=".footer__body, 767.98" class="footer__copyright">
@@ -296,7 +310,7 @@
 					<div class="footer__column contacts-footer">
 						<div class="footer__column-caption contacts-footer__caption">Контакти</div>
 						<div class="contacts-footer__items">
-							<a href="tel:380964697398" class="contacts-footer__link">
+							<a href="tel:380964697398" class="contacts-footer__link" aria-label="Телефон: +38(096)469-73-98">
 								<svg>
 									<use xlink:href="img/icons/icons.svg#phone"></use>
 								</svg>
@@ -318,22 +332,22 @@
 						<div class="contacts-footer__socials">
 							<div class="contacts-footer__socials-label">Шукайте у соц. мережах:</div>
 							<div class="contacts-footer__socials-icons socials">
-								<a href="#" class="socials__icon socials__icon-viber">
+								<a href="#" class="socials__icon socials__icon-viber" aria-label="Viber">
 									<svg>
 										<use xlink:href="img/icons/icons.svg#viber"></use>
 									</svg>
 								</a>
-								<a href="#" class="socials__icon socials__icon-telegram">
+								<a href="#" class="socials__icon socials__icon-telegram" aria-label="telegram">
 									<svg>
 										<use xlink:href="img/icons/icons.svg#mail-filled"></use>
 									</svg>
 								</a>
-								<a href="#" class="socials__icon socials__icon-instagram">
+								<a href="#" class="socials__icon socials__icon-instagram" aria-label="instagram">
 									<svg>
 										<use xlink:href="img/icons/icons.svg#instagram"></use>
 									</svg>
 								</a>
-								<a href="#" class="socials__icon socials__icon-youtube">
+								<a href="#" class="socials__icon socials__icon-youtube" aria-label="youtube">
 									<svg>
 										<use xlink:href="img/icons/icons.svg#youtube"></use>
 									</svg>
@@ -345,22 +359,22 @@
 						<div class="footer__column-caption form-footer__caption">Залишились питання?</div>
 						<div class="form-footer__inputs">
 							<div class="form-footer__input">
-								<input data-required autocomplete="off" type="text" name="username" placeholder="Ваше імя*" class="input">
+								<input data-required autocomplete="off" type="text" name="username" placeholder="Ваше імя*" class="input" aria-label="Ваше ім'я">
 							</div>
 							<div class="form-footer__input">
-								<input data-required autocomplete="off" type="tel" name="userphone" placeholder="Ваш номер телефону*" class="input">
+								<input data-required autocomplete="off" type="tel" name="userphone" placeholder="Ваш номер телефону*" class="input" aria-label="Ваш номер телефону">
 							</div>
 							<div class="form-footer__input">
-								<input data-required autocomplete="off" type="email" name="usermail" placeholder="Ваша пошта*" class="input">
+								<input data-required autocomplete="off" type="email" name="usermail" placeholder="Ваша пошта*" class="input" aria-label="Ваша пошта">
 							</div>
 						</div>
-						<button type="submit" class="form-footer__submit btn btn-blue">Надіслати</button>
+						<button type="submit" class="form-footer__submit btn btn-blue" aria-label="Надіслати форму">Надіслати</button>
 					</form>
 				</div>
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240127223332"></script>
+	<script src="js/app.min.js?_v=20240129012521"></script>
 </body>
 
 </html>

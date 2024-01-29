@@ -21,6 +21,75 @@
             }), 0);
         }));
     }
+    let _slideUp = (target, duration = 500, showmore = 0) => {
+        if (!target.classList.contains("_slide")) {
+            target.classList.add("_slide");
+            target.style.transitionProperty = "height, margin, padding";
+            target.style.transitionDuration = duration + "ms";
+            target.style.height = `${target.offsetHeight}px`;
+            target.offsetHeight;
+            target.style.overflow = "hidden";
+            target.style.height = showmore ? `${showmore}px` : `0px`;
+            target.style.paddingTop = 0;
+            target.style.paddingBottom = 0;
+            target.style.marginTop = 0;
+            target.style.marginBottom = 0;
+            window.setTimeout((() => {
+                target.hidden = !showmore ? true : false;
+                !showmore ? target.style.removeProperty("height") : null;
+                target.style.removeProperty("padding-top");
+                target.style.removeProperty("padding-bottom");
+                target.style.removeProperty("margin-top");
+                target.style.removeProperty("margin-bottom");
+                !showmore ? target.style.removeProperty("overflow") : null;
+                target.style.removeProperty("transition-duration");
+                target.style.removeProperty("transition-property");
+                target.classList.remove("_slide");
+                document.dispatchEvent(new CustomEvent("slideUpDone", {
+                    detail: {
+                        target
+                    }
+                }));
+            }), duration);
+        }
+    };
+    let _slideDown = (target, duration = 500, showmore = 0) => {
+        if (!target.classList.contains("_slide")) {
+            target.classList.add("_slide");
+            target.hidden = target.hidden ? false : null;
+            showmore ? target.style.removeProperty("height") : null;
+            let height = target.offsetHeight;
+            target.style.overflow = "hidden";
+            target.style.height = showmore ? `${showmore}px` : `0px`;
+            target.style.paddingTop = 0;
+            target.style.paddingBottom = 0;
+            target.style.marginTop = 0;
+            target.style.marginBottom = 0;
+            target.offsetHeight;
+            target.style.transitionProperty = "height, margin, padding";
+            target.style.transitionDuration = duration + "ms";
+            target.style.height = height + "px";
+            target.style.removeProperty("padding-top");
+            target.style.removeProperty("padding-bottom");
+            target.style.removeProperty("margin-top");
+            target.style.removeProperty("margin-bottom");
+            window.setTimeout((() => {
+                target.style.removeProperty("height");
+                target.style.removeProperty("overflow");
+                target.style.removeProperty("transition-duration");
+                target.style.removeProperty("transition-property");
+                target.classList.remove("_slide");
+                document.dispatchEvent(new CustomEvent("slideDownDone", {
+                    detail: {
+                        target
+                    }
+                }));
+            }), duration);
+        }
+    };
+    let _slideToggle = (target, duration = 500) => {
+        if (target.hidden) return _slideDown(target, duration); else return _slideUp(target, duration);
+    };
     let bodyLockStatus = true;
     let bodyLockToggle = (delay = 500) => {
         if (document.documentElement.classList.contains("lock")) bodyUnlock(delay); else bodyLock(delay);
@@ -3967,7 +4036,7 @@
         });
     }
     function initSliders() {
-        if (document.querySelector(".work-with__slider")) new Swiper(".work-with__slider", {
+        if (document.querySelector(".work-with__slider") && window.innerWidth >= 992) new Swiper(".work-with__slider", {
             modules: [ Navigation, Autoplay ],
             observer: true,
             observeParents: true,
@@ -4037,7 +4106,16 @@
                     slidesPerView: 2.2
                 }
             },
-            on: {}
+            on: {
+                init: function() {
+                    var currentSlide = this.realIndex;
+                    var numberElements = document.querySelectorAll(".slide-work-with__number-mob");
+                    if (numberElements) numberElements.forEach(((item, index) => {
+                        var formattedNumber = currentSlide + index < 10 ? "0" + (currentSlide + index) : currentSlide + index;
+                        item.textContent = formattedNumber;
+                    }));
+                }
+            }
         });
         if (document.querySelector(".certificates__slider-body")) new Swiper(".certificates__slider-body", {
             modules: [ Navigation, Pagination ],
@@ -4191,12 +4269,28 @@
     }
     const da = new DynamicAdapt("max");
     da.init();
-    const educationBlock = document.querySelectorAll(".education-about__block");
-    for (let i = 0; i < educationBlock.length; i++) {
-        const education = educationBlock[i];
-        education.querySelectorAll(".education-about__list p");
-        education.querySelector(".education-about__show-more");
-        education.querySelector(".education-about__show-more span");
+    const educationBlocks = document.querySelectorAll(".education-about__block");
+    if (educationBlocks) educationBlocks.forEach((block => {
+        const blockButton = block.querySelector(".education-about__show-more");
+        const blockHideContent = block.querySelector(".education-about__list-hide");
+        const blockButtonText = blockButton.querySelector("span");
+        _slideUp(blockHideContent, 0);
+        if (blockHideContent && !blockHideContent.querySelector("p")) blockButton.classList.add("hide");
+        blockButton.addEventListener("click", (() => {
+            if (blockHideContent) {
+                _slideToggle(blockHideContent, 300);
+                blockButton.classList.toggle("active");
+                blockButtonText.textContent = blockButtonText.textContent === "Дивитись усе" ? "Згорнути" : "Дивитись усе";
+            }
+        }));
+    }));
+    const aboutCourses = document.querySelector(".about-courses");
+    if (aboutCourses) {
+        const aboutCoursesButton = document.querySelector(".about-courses__read-more");
+        aboutCoursesButton.addEventListener("click", (function() {
+            aboutCourses.classList.toggle("active");
+            aboutCoursesButton.textContent = aboutCoursesButton.textContent === "Читати далі" ? "Згорнути" : "Читати далі";
+        }));
     }
     window["FLS"] = true;
     isWebp();
