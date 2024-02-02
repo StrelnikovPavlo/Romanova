@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240202013146">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240202125723">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -665,20 +665,20 @@
 							</div>
 						</div>
 					</div>
-					<form data-ajax action="https://romanova-mental.com/api/v1/consultation" method="post" class="footer__column form-footer">
+					<form data-ajax action="https://jsonplaceholder.typicode.com/users" method="post" class="footer__column form-footer" data-popup-message="#success-send">
 						<div class="footer__column-caption form-footer__caption">Залишились питання?</div>
 						<div class="form-footer__inputs">
 							<div class="form-footer__input">
-								<input data-required type="text" name="username" placeholder="Ваше імя*" class="input" aria-label="Ваше ім'я">
+								<input data-required type="text" name="name" placeholder="Ваше імя*" class="input" aria-label="Ваше ім'я">
 							</div>
 							<div class="form-footer__input">
-								<input data-required type="tel" name="userphone" placeholder="Ваш номер телефону*" class="input" aria-label="Ваш номер телефону">
+								<input data-required type="tel" name="phone" placeholder="Ваш номер телефону*" class="input" aria-label="Ваш номер телефону">
 							</div>
 							<div class="form-footer__input">
-								<input data-required type="email" name="usermail" placeholder="Ваша пошта*" class="input" aria-label="Ваша пошта">
+								<input data-required type="email" name="email" placeholder="Ваша пошта*" class="input" aria-label="Ваша пошта">
 							</div>
 							<div class="form-footer__input">
-								<textarea name="question" cols="30" rows="10" placeholder="Ваше питання*"></textarea>
+								<textarea name="message" cols="30" rows="10" placeholder="Ваше питання*"></textarea>
 							</div>
 						</div>
 						<button type="submit" id="submitBtn" class="form-footer__submit btn btn-blue" aria-label="Надіслати форму">Надіслати</button>
@@ -743,7 +743,30 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20240202013146"></script>
+	<div id="success-send" aria-hidden="true" class="popup reservation-popup">
+		<div class="popup__wrapper">
+			<svg class="popup-line" xmlns="http://www.w3.org/2000/svg" width="1920" height="673" viewBox="0 0 1920 673" fill="none">
+				<path d="M1970 220.572C1747 399.572 1308.56 330.572 1273.5 203.072C1257 143.072 1325.5 87.5718 1461 193.215C1592 -288.928 1784.75 254.838 1382.5 573.072C1033 849.572 266 490.5 -8 96" stroke="url(#paint0_linear_242_2373)" stroke-width="3" />
+				<defs>
+					<linearGradient id="paint0_linear_242_2373" x1="676" y1="623.5" x2="1793.5" y2="291.5" gradientUnits="userSpaceOnUse">
+						<stop stop-color="white" />
+						<stop offset="1" stop-color="#8DC1FF" />
+					</linearGradient>
+				</defs>
+			</svg>
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+						<path d="M9.91602 9.91699L24.0827 24.0837M9.91602 24.0837L24.0827 9.91699" stroke="#87BFFF" stroke-width="3.54167" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</button>
+				<div class="reservation-popup__content">
+					<div class="reservation-popup__number title-section">Ваше повідомлення відправлено</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20240202125723"></script>
 </body>
 
 </html>

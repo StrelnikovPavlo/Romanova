@@ -825,6 +825,10 @@ body::after {
   display: block;
 }
 
+.reservation-popup__content *:last-child {
+  margin-bottom: 0;
+}
+
 .reservation-popup__number {
   margin-bottom: 29px;
 }
@@ -4181,6 +4185,10 @@ body::after {
   display: none;
 }
 
+#input-consultation {
+  display: none;
+}
+
 .swiper {
   overflow: hidden;
 }
@@ -6425,7 +6433,7 @@ body::after {
         -ms-transform: rotate(-90deg) translate(10px, 0px) !important;
             transform: rotate(-90deg) translate(10px, 0px) !important;
     top: auto !important;
-    bottom: 100% !important;
+    bottom: 95% !important;
     left: 48.5% !important;
   }
 
@@ -7913,6 +7921,11 @@ body::after {
   .who__block {
     text-align: center;
     margin-top: -27px;
+  }
+
+  .who__block._active {
+    -webkit-transition: all 1s ease 0s;
+    transition: all 1s ease 0s;
   }
 
   .who__text {

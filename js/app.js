@@ -949,8 +949,8 @@
                     const ajax = form.hasAttribute("data-ajax");
                     if (ajax) {
                         e.preventDefault();
-                        const formAction = "https://romanova-mental.com/api/v1/consultation";
-                        const formMethod = "POST";
+                        const formAction = form.getAttribute("action") ? form.getAttribute("action").trim() : "#";
+                        const formMethod = form.getAttribute("method") ? form.getAttribute("method").trim() : "GET";
                         const formData = new FormData(form);
                         const jsonData = {};
                         formData.forEach(((value, key) => {
@@ -1004,7 +1004,7 @@
                     }
                 }), 0);
                 formLogging(`Форму відправлено!`);
-                console.log("Form Data:", jsonData);
+                console.log("Server Response:", responseResult);
                 formValidate.formClean(form);
             }
             function formLogging(message) {
@@ -5894,6 +5894,8 @@
                     }
                 }
             };
+            const calendarInstance = new VanillaCalendar("#calendar", options);
+            calendarInstance.init();
             function setInitialReservation() {
                 const today = new Date;
                 updateReservationDate(today);
@@ -5903,18 +5905,7 @@
                     updateReservationTime(selectedTime);
                 }
             }
-            const calendarInstance = new VanillaCalendar("#calendar", options);
-            calendarInstance.init();
             setInitialReservation();
-            function updateReservationTime(selectedTime) {
-                const reservationDateBlock = document.querySelector(".info-reservation__date");
-                const currentReservationDate = reservationDateBlock.textContent;
-                const existingTimes = currentReservationDate.split(",").map((time => time.trim()));
-                existingTimes.splice(2);
-                existingTimes.push(selectedTime);
-                const updatedReservationDate = existingTimes.join(", ");
-                reservationDateBlock.textContent = updatedReservationDate;
-            }
             function formatDate(date) {
                 const options = {
                     day: "numeric",
@@ -5925,8 +5916,19 @@
                 const formattedDate = date.toLocaleDateString("ua", options);
                 return formattedDate;
             }
+            function updateReservationTime(selectedTime) {
+                const reservationDateBlock = document.querySelector(".info-reservation__date");
+                if (reservationDateBlock) {
+                    const currentReservationDate = reservationDateBlock.textContent;
+                    const existingTimes = currentReservationDate.split(",").map((time => time.trim()));
+                    existingTimes.splice(2);
+                    existingTimes.push(selectedTime);
+                    const updatedReservationDate = existingTimes.join(", ");
+                    reservationDateBlock.textContent = updatedReservationDate;
+                }
+            }
             const timePickerItems = document.querySelectorAll(".time-picker-reservation__item");
-            timePickerItems.forEach((item => {
+            if (timePickerItems) timePickerItems.forEach((item => {
                 item.addEventListener("click", (() => {
                     if (!item.classList.contains("disable")) {
                         timePickerItems.forEach((timeItem => timeItem.classList.remove("selected")));
@@ -5942,10 +5944,19 @@
                 const formattedDate = formatDate(selectedDate);
                 reservationDateBlock.textContent = formattedDate;
                 if (!(selectedDate instanceof Date)) selectedDate = new Date(selectedDate);
-                if (inputDate) inputDate.value = selectedDate.toISOString().split("T")[0];
+                const isoDateString = selectedDate.toISOString();
                 const timePickerItems = document.querySelectorAll(".time-picker-reservation__item");
+                const selectedTimeItem = document.querySelector(".time-picker-reservation__item.selected");
+                if (selectedTimeItem) {
+                    const selectedTime = selectedTimeItem.textContent;
+                    const updatedIsoString = isoDateString.split("T")[0] + "T" + selectedTime + ":00.000Z";
+                    if (inputDate) inputDate.value = updatedIsoString;
+                }
                 timePickerItems.forEach((timeItem => timeItem.classList.remove("selected")));
             }
+        } else if (inputDate) {
+            const currentDateISO = (new Date).toISOString();
+            inputDate.value = currentDateISO;
         }
         const chat = document.querySelector(".chat");
         if (chat) {
