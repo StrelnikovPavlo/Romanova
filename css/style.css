@@ -507,6 +507,10 @@ textarea {
   color: #A5A5A5 !important;
 }
 
+.vanilla-calendar-day__btn_prev {
+  color: #A5A5A5 !important;
+}
+
 .vanilla-calendar-day__btn_selected {
   color: #fff !important;
 }
@@ -1425,7 +1429,7 @@ body::after {
 
 .footer {
   position: relative;
-  z-index: 3;
+  z-index: 10;
   background: #DFEBFF;
   padding: 55px 0 48px 0;
 }
@@ -1597,9 +1601,25 @@ body::after {
 
 .chat {
   position: fixed;
-  bottom: 0;
+  bottom: -375px;
   z-index: 99;
   width: 100%;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.chat.active {
+  bottom: 0px;
+}
+
+.chat__body {
   background-color: #fff;
 }
 
@@ -1699,6 +1719,25 @@ body::after {
 
 .chat__messages-2 {
   height: 267px;
+}
+
+.chat__button-open {
+  position: relative;
+  border: 4px solid #DFEBFF;
+  background-color: #fff;
+  width: 71px;
+  height: 71px;
+  border-radius: 50%;
+  margin-bottom: 33px;
+}
+
+.chat__button-open::before {
+  content: "";
+  display: block;
+  background: url("../img/icons/twotone-mail.svg") no-repeat;
+  width: 32px;
+  height: 32px;
+  background-size: contain;
 }
 
 .user-chat {
@@ -2238,6 +2277,10 @@ body::after {
   padding-bottom: 25px;
 }
 
+.work-with__line-svg-mobile {
+  display: none;
+}
+
 .work-with__line-svg {
   position: absolute;
   top: -15px;
@@ -2247,6 +2290,13 @@ body::after {
   width: 1934px;
   height: 527.027px;
   z-index: -2;
+}
+
+.work-with__line-svg-love {
+  width: 2094.5px;
+  height: 690.98px;
+  top: -50px;
+  left: -34%;
 }
 
 .work-with .swiper-slide-prev,
@@ -3791,6 +3841,11 @@ body::after {
   display: block;
   max-width: 100%;
   min-height: 200px;
+}
+
+.blog__author {
+  line-height: 120%;
+  color: #6C6C6C;
 }
 
 .info-blog {
@@ -5817,6 +5872,11 @@ body::after {
 
 @media (min-width: 29.99875em) {
   .chat {
+    max-width: 270px;
+    right: 5.5729166667%;
+  }
+
+  .chat__body {
     -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
             box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px 20px 0px 0px;
@@ -6340,8 +6400,22 @@ body::after {
     padding-top: 0.75rem;
   }
 
+  .blog__author {
+    font-size: 1.25rem;
+  }
+
+  .blog__author {
+    margin-top: 2rem;
+  }
+
   .reservation-page {
     margin-bottom: 9.375rem;
+  }
+}
+
+@media (max-width: 1360px) {
+  .chat__button-open {
+    margin-left: auto;
   }
 }
 
@@ -6778,6 +6852,14 @@ body::after {
     padding-top: 0.3125rem;
   }
 
+  .blog__author {
+    font-size: 0.875rem;
+  }
+
+  .blog__author {
+    margin-top: 1.5rem;
+  }
+
   .reservation-page {
     margin-bottom: 4.375rem;
   }
@@ -7051,6 +7133,14 @@ body::after {
   .work-with__description-list {
     font-size: 14px;
     padding-left: 22px;
+  }
+
+  .work-with__line-svg-desktop {
+    display: none;
+  }
+
+  .work-with__line-svg-mobile {
+    display: block;
   }
 
   .work-with__line-svg {
@@ -7346,6 +7436,12 @@ body::after {
     background: #FFF;
   }
 
+  .item-service__order {
+    background-color: #2F85E7;
+    color: #fff;
+    font-weight: 600;
+  }
+
   .materials-page {
     padding-top: 131px;
   }
@@ -7517,13 +7613,6 @@ body::after {
         flex-wrap: initial;
   }
 
-  .block-reservation__content-row {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-
   .block-reservation__calendar {
     margin-left: auto;
     margin-right: auto;
@@ -7578,6 +7667,7 @@ body::after {
     -webkit-column-gap: 10px;
        -moz-column-gap: 10px;
             column-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
   }
 
   .time-picker-reservation__alternative-message {
@@ -8180,6 +8270,7 @@ body::after {
   .materials__filter {
     -ms-grid-column-span: 2;
     grid-column: 2 span;
+    margin-bottom: 24px;
   }
 
   .filter-materials {
@@ -8297,6 +8388,13 @@ body::after {
     max-width: none;
   }
 
+  .block-reservation__content-row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
   .block-reservation__row {
     gap: 12px;
   }
@@ -8325,7 +8423,12 @@ body::after {
   }
 
   .chat {
+    height: 100vh;
+    bottom: -100%;
     padding-top: 83px;
+  }
+
+  .chat__body {
     height: 100vh;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -8338,6 +8441,14 @@ body::after {
 
   .chat__messages {
     height: 100%;
+  }
+
+  .chat__button-open {
+    position: fixed;
+    bottom: 15px;
+    margin-bottom: 0;
+    right: 15px;
+    z-index: -1;
   }
 
   .consultation-process__line {
@@ -9317,6 +9428,30 @@ body::after {
 @supports not (padding-top: clamp( 0.3125rem , 0.1534090909rem  +  0.7954545455vw , 0.75rem )) {
     .blog__text img {
       padding-top: calc(0.3125rem + 0.4375 * (100vw - 20rem) / 55);
+    }
+}
+
+@supports (font-size: clamp( 0.875rem , 0.7386363636rem  +  0.6818181818vw , 1.25rem )) {
+    .blog__author {
+      font-size: clamp( 0.875rem , 0.7386363636rem  +  0.6818181818vw , 1.25rem );
+    }
+}
+
+@supports not (font-size: clamp( 0.875rem , 0.7386363636rem  +  0.6818181818vw , 1.25rem )) {
+    .blog__author {
+      font-size: calc(0.875rem + 0.375 * (100vw - 20rem) / 55);
+    }
+}
+
+@supports (margin-top: clamp( 1.5rem , 1.3181818182rem  +  0.9090909091vw , 2rem )) {
+    .blog__author {
+      margin-top: clamp( 1.5rem , 1.3181818182rem  +  0.9090909091vw , 2rem );
+    }
+}
+
+@supports not (margin-top: clamp( 1.5rem , 1.3181818182rem  +  0.9090909091vw , 2rem )) {
+    .blog__author {
+      margin-top: calc(1.5rem + 0.5 * (100vw - 20rem) / 55);
     }
 }
 

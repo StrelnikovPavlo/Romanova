@@ -4815,6 +4815,19 @@
         window.addEventListener("load", (function(e) {
             initSliders();
         }));
+        function moveFilterBlock() {
+            const materialsContainer = document.querySelector(".materials__container");
+            if (materialsContainer) {
+                const filterBlock = document.querySelector(".materials__filter");
+                const screenWidth = window.innerWidth;
+                if (screenWidth <= 767) materialsContainer.insertBefore(filterBlock, document.querySelector(".materials__title").nextSibling); else {
+                    const materialsItems = document.querySelector(".materials__items");
+                    materialsItems.insertBefore(filterBlock, materialsItems.children[2]);
+                }
+            }
+        }
+        window.addEventListener("load", moveFilterBlock);
+        window.addEventListener("resize", moveFilterBlock);
         var lazyload_min = __webpack_require__(732);
         new lazyload_min({
             elements_selector: "[data-src],[data-srcset]",
@@ -5896,16 +5909,6 @@
             };
             const calendarInstance = new VanillaCalendar("#calendar", options);
             calendarInstance.init();
-            function setInitialReservation() {
-                const today = new Date;
-                updateReservationDate(today);
-                const selectedTimeItem = document.querySelector(".time-picker-reservation__item.selected");
-                if (selectedTimeItem) {
-                    const selectedTime = selectedTimeItem.textContent;
-                    updateReservationTime(selectedTime);
-                }
-            }
-            setInitialReservation();
             function formatDate(date) {
                 const options = {
                     day: "numeric",
@@ -5934,6 +5937,7 @@
                         timePickerItems.forEach((timeItem => timeItem.classList.remove("selected")));
                         item.classList.add("selected");
                         const selectedTime = item.textContent;
+                        if (inputTime) inputTime.value = selectedTime;
                         updateReservationTime(selectedTime);
                         if (inputTime) inputTime.value = selectedTime;
                     }
@@ -5943,16 +5947,52 @@
                 const reservationDateBlock = document.querySelector(".info-reservation__date");
                 const formattedDate = formatDate(selectedDate);
                 reservationDateBlock.textContent = formattedDate;
-                if (!(selectedDate instanceof Date)) selectedDate = new Date(selectedDate);
-                const isoDateString = selectedDate.toISOString();
-                const timePickerItems = document.querySelectorAll(".time-picker-reservation__item");
-                const selectedTimeItem = document.querySelector(".time-picker-reservation__item.selected");
-                if (selectedTimeItem) {
-                    const selectedTime = selectedTimeItem.textContent;
-                    const updatedIsoString = isoDateString.split("T")[0] + "T" + selectedTime + ":00.000Z";
-                    if (inputDate) inputDate.value = updatedIsoString;
+                if (!(selectedDate instanceof Date) || isNaN(selectedDate)) selectedDate = new Date(selectedDate);
+                if (!isNaN(selectedDate.getTime()) && typeof selectedDate.toISOString === "function") {
+                    const isoDateString = selectedDate.toISOString();
+                    const selectedTimeItem = document.querySelector(".time-picker-reservation__item.selected");
+                    if (selectedTimeItem) {
+                        const selectedTime = selectedTimeItem.textContent;
+                        const updatedIsoString = isoDateString.split("T")[0] + "T" + selectedTime + ":00.000Z";
+                        if (inputDate) inputDate.value = updatedIsoString;
+                        fetch(`https://romanova-mental.com/api/v1/freetime?day=${selectedDate.toISOString().split("T")[0]}`, {
+                            method: "GET",
+                            headers: {
+                                Accept: "application/json",
+                                "Content-Type": "application/json"
+                            }
+                        }).then((response => response.json())).then((data => {
+                            console.log("Data received from server:", data);
+                            updateReservationTimeSlots(data);
+                        })).catch((error => {
+                            console.error("Error fetching time slots:", error);
+                        }));
+                    }
                 }
+            }
+            function updateReservationTimeSlots(timeSlots) {
+                const timePickerItems = document.querySelectorAll(".time-picker-reservation__item");
+                timePickerItems.forEach(((item, index) => {
+                    const timeSlot = timeSlots[index];
+                    if (timeSlot) if (timeSlot.is_available) {
+                        item.classList.remove("disable");
+                        item.addEventListener("click", (() => handleTimeSlotClick(timeSlot.time)));
+                    } else {
+                        item.classList.add("disable");
+                        item.removeEventListener("click", (() => handleTimeSlotClick(timeSlot.time)));
+                    }
+                }));
+            }
+            function handleTimeSlotClick(selectedTime) {
+                const timePickerItems = document.querySelectorAll(".time-picker-reservation__item");
                 timePickerItems.forEach((timeItem => timeItem.classList.remove("selected")));
+                const selectedTimeItem = Array.from(timePickerItems).find((item => item.textContent === selectedTime));
+                if (selectedTimeItem) {
+                    selectedTimeItem.classList.add("selected");
+                    updateReservationTime(selectedTime);
+                    if (inputTime) inputTime.value = selectedTime;
+                    updateReservationTime(selectedTime);
+                }
             }
         } else if (inputDate) {
             const currentDateISO = (new Date).toISOString();
@@ -5962,12 +6002,27 @@
         if (chat) {
             const chatInput = chat.querySelector(".input-chat__input-field input");
             const submitButton = chat.querySelector(".input-chat__send");
+            const chatButton = chat.querySelector(".chat__button-open");
+            const chatButtonClose = chat.querySelector(".chat__close");
             chatInput.addEventListener("input", (function() {
                 if (chatInput.value.trim() !== "") submitButton.classList.remove("disable"); else submitButton.classList.add("disable");
             }));
             submitButton.addEventListener("click", (function() {
                 chatInput.value = "";
             }));
+            function handleResize() {
+                if (window.innerWidth <= 480 && chat.classList.contains("active")) bodyLock(); else bodyUnlock();
+            }
+            chatButton.addEventListener("click", (function() {
+                chat.classList.add("active");
+                handleResize();
+            }));
+            chatButtonClose.addEventListener("click", (function() {
+                chat.classList.remove("active");
+                bodyUnlock();
+            }));
+            window.addEventListener("resize", handleResize);
+            handleResize();
         }
         window["FLS"] = false;
         isWebp();
