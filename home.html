@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240215232641">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240216194237">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,11 +45,14 @@
 							</div>
 						</div>
 					</div>
-					<!-- <div class="mainscreen__figures figures-mainscreen">
-							<span class="figures-mainscreen__item figures-mainscreen__item-left"></span>
-							<span class="figures-mainscreen__item figures-mainscreen__item-right"></span>
-							<span class="figures-mainscreen__item figures-mainscreen__item-bottom"></span>
-						</div> -->
+					<div class="mainscreen__figures figures-mainscreen">
+						<span class="figures-mainscreen__item figures-mainscreen__item-left"></span>
+						<span class="figures-mainscreen__item figures-mainscreen__item-right"></span>
+						<span class="figures-mainscreen__item figures-mainscreen__item-bottom"></span>
+					</div>
+					<picture><source srcset="img/mainscreen/youtube-1.webp" type="image/webp"><img src="img/mainscreen/youtube-1.png" alt="" class="decor-mainscreen-1"></picture>
+					<picture><source srcset="img/mainscreen/youtube-2.webp" type="image/webp"><img src="img/mainscreen/youtube-2.png" alt="" class="decor-mainscreen-2"></picture>
+					<picture><source srcset="img/mainscreen/youtube-3.webp" type="image/webp"><img src="img/mainscreen/youtube-3.png" alt="" class="decor-mainscreen-3"></picture>
 				</div>
 			</section>
 			<section class="home-page__business-promotion business-promotion">
@@ -250,11 +253,13 @@
 			<section class="home-page__cases cases">
 				<div class="cases__container">
 					<div class="cases__body">
+						<picture><source srcset="img/icon-youtube-1.webp" type="image/webp"><img src="img/icon-youtube-1.png" alt="" class="cases__body-decor--1"></picture>
+						<picture><source srcset="img/icon-youtube-2.webp" type="image/webp"><img src="img/icon-youtube-2.png" alt="" class="cases__body-decor--2"></picture>
 						<div class="cases__content">
 							<h2 class="cases__title title-section">Cases</h2>
 							<div class="cases__chanel chanel-cases">
 								<div class="chanel-cases__img">
-									<picture><source srcset="img/cases/01.webp" type="image/webp"><img src="img/cases/01.jpg" alt="img"></picture>
+									<picture><source srcset="img/cases/01.webp" type="image/webp"><img src="img/cases/01.png" alt="img"></picture>
 								</div>
 								<div class="chanel-cases__info">
 									<h3 class="chanel-cases__title">Ideal Pharma Peptide</h3>
@@ -294,7 +299,7 @@
 							</div>
 							<div class="cases__chanel chanel-cases">
 								<div class="chanel-cases__img">
-									<picture><source srcset="img/cases/02.webp" type="image/webp"><img src="img/cases/02.jpg" alt="img"></picture>
+									<picture><source srcset="img/cases/02.webp" type="image/webp"><img src="img/cases/02.png" alt="img"></picture>
 								</div>
 								<div class="chanel-cases__info">
 									<h3 class="chanel-cases__title">SUPER LOVER</h3>
@@ -369,8 +374,9 @@
 			</section>
 			<section class="home-page__customer-communication customer-communication">
 				<div class="customer-communication__container">
-					<!-- <picture><source srcset="img/form/youtube-logo.webp" type="image/webp"><img src="img/form/youtube-logo.png" alt="img" class="customer-communication__logo-youtube"></picture> -->
 					<div class="customer-communication__body">
+						<picture><source srcset="img/form/youtube-logo.webp" type="image/webp"><img src="img/form/youtube-logo.png" alt="img" class="customer-communication__logo-youtube"></picture>
+						<picture><source srcset="img/icon-youtube-2.webp" type="image/webp"><img src="img/icon-youtube-2.png" alt="img" class="customer-communication__logo-youtube-2"></picture>
 						<picture><source srcset="img/customer.webp" type="image/webp"><img src="img/customer.jpeg" alt="img" class="customer-communication__img"></picture>
 						<div class="customer-communication__inner">
 							<h2 class="customer-communication__title title-section">We are always in touch with our customers</h2>
@@ -393,15 +399,15 @@
 				<div class="work-together__container">
 					<div class="work-together__body">
 						<div class="work-together__inner">
-							<form action="#" class="work-together__form form">
+							<form data-dev action="#" class="work-together__form form">
 								<h2 class="form__title title-section">Let's work together.</h2>
 								<div class="form__subtitle">We invite you to a free consultation. Contact us today!</div>
 								<div class="form__body">
 									<div class="form__input">
-										<input autocomplete="off" type="text" name="name" placeholder="your name" class="input">
+										<input data-validate autocomplete="off" type="text" name="name" placeholder="your name" class="input">
 									</div>
 									<div class="form__input">
-										<input autocomplete="off" type="text" name="number" placeholder="Phone number" class="input">
+										<input data-validate autocomplete="off" type="text" name="number" placeholder="Phone number" class="input">
 									</div>
 									<button type="submit" class="form__submit">Submit</button>
 								</div>
@@ -415,7 +421,7 @@
 									<img src="img/icons/subscribe-icon.svg" alt="img">
 								</div>
 								<div class="subscribe__text">Subscribe to our channel to keep up with the news</div>
-								<button type="button" class="subscribe__button">Subscribe</button>
+								<a href='#' class="subscribe__button btn">Subscribe</a>
 							</div>
 						</div>
 					</div>
@@ -423,7 +429,7 @@
 			</section>
 		</main>
 	</div>
-	<script src="js/app.min.js?_v=20240215232641"></script>
+	<script src="js/app.min.js?_v=20240216194237"></script>
 </body>
 
 </html>
